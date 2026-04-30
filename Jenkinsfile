@@ -67,19 +67,17 @@ pipeline {
             }
         }
 
-        stage('6. Build Docker Image') {
-            steps {
-                echo '========== Stage 6: Building Docker image =========='
-                script {
-                    sh """
-                        docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
-                        docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest
-                        docker images | grep ${DOCKER_IMAGE}
-                    """
-                }
-            }
-        }
-
+       // stage('6. Build Docker Image') {
+         //   steps {
+           //     echo '========== Stage 6: Building Docker image =========='
+             //   script {
+               //     sh """
+                 //       docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} .
+                   //     docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_IMAGE}:latest
+                     //   docker images | grep ${DOCKER_IMAGE}
+                //    """
+              //  }
+            //}}
         stage('7. Push Docker Image to Registry') {
             steps {
                 echo '========== Stage 7: Pushing Docker image to registry =========='
