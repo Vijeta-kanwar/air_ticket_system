@@ -19,7 +19,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests -B
 
 # Stage 2: Create the runtime image
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:17-jre
 
 LABEL maintainer="DevOps Team <devops@airticket.com>"
 LABEL description="Air Ticket Booking System - Runtime"
